@@ -1,6 +1,6 @@
 # Soldering station T12 by SO
 
-<p align<img src="https://github.com/Szymono/Soldering-station-T12-by-SO/blob/main/res/P1130167ee.jpeg"/></p>
+<img src="https://github.com/Szymono/Soldering-station-T12-by-SO/blob/main/res/P1130167ee.jpeg"/>
 
 # Description
 

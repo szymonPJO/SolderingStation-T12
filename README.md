@@ -16,7 +16,7 @@ Make good looking soldering for T12 tips, current and set temperature in \*C deg
 
 I intend to make update once at week at least.
 
-The soldering need only to make PID 
+For main features the soldering need only to make calibration for PID and thermostat math. (I'll write more soon)
 
 ## License
 

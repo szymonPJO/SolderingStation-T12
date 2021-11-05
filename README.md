@@ -10,7 +10,7 @@ Click ⭐ if u want updetes more frequently
 
 ## My motivation
 
-Make good looking soldering for T12 tips, current and set temperature in \*C degree on LCD, autosleep, PID controller, touch button for stop/start soldering, GX16 connector for quick change handles, heating LED, and switch for 230AC (power save & safety). Maybe in future I'll make additionaly li-ion power. What is important I make frontpanel for any who can order PCB or drill on CNC, otherwise it can be very difficult to make it.
+Make good looking soldering for T12 tips with features: current and set temperature in \*C degree on LCD, autosleep, PID controller, touch button for stop/start soldering, GX16 connector for quick change handles, heating LED, and switch for 230AC (power save & safety). Maybe in future I'll make additionaly li-ion power. What is important I make frontpanel for any who can order PCB or drill on CNC, otherwise it can be very difficult to make it.
 
 [PL:] Również chcę dostosowac charakterustykę wzmacniacza LM386 do faktycznej temperatury termopary/grotu poprzez wyznaczenie i zastosowanie wielomianu
 

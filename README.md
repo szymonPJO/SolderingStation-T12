@@ -6,7 +6,8 @@
 
 Soldering station for T12 handle/tips (also 907 in future). `Build in progress...`
 
-Click ⭐ if u want updetes more frequently
+Click ⭐ if u like it
+<!-- want updetes more frequently -->
 
 ## My motivation
 

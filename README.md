@@ -1,3 +1,7 @@
+# Soldering station T12 by SO
+
+<p align<img src="https://github.com/Szymono/Soldering-station-T12-by-SO/blob/main/res/P1130167ee.jpeg"/></p>
+
 # Description
 
 Soldering station for T12 handle/tips (also 907 in future). `Build in progress...`

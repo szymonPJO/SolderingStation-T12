@@ -2,6 +2,8 @@
 
 <img src="https://github.com/Szymono/Soldering-station-T12-by-SO/blob/main/res/P1130167ee.jpeg"/>
 
+**UPDATE:05.01.2022** I try to make own IDE on vscode and make/cmake, but I stuck ,becouse I want to make this without MXCube. So I have to write own makefile and first lern how it works. I hope this half of the year I finish whole project ^^ 
+
 # Description
 
 Soldering station for T12 handle/tips (also 907 in future). `Build in progress...`

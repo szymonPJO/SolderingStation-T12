@@ -1,10 +1,19 @@
+# Soldering station T12 by SO
+
+<img src="https://github.com/Szymono/Soldering-station-T12-by-SO/blob/main/res/P1130167ee.jpeg"/>
+
+**UPDATE:05.01.2022** I try to make own IDE on vscode and make/cmake, but I stuck ,becouse I want to make this without MXCube. So I have to write own makefile and first lern how it works. I hope this half of the year I finish whole project ^^ 
+
 # Description
 
 Soldering station for T12 handle/tips (also 907 in future). `Build in progress...`
 
+Click ⭐ if u like it
+<!-- want updetes more frequently -->
+
 ## My motivation
 
-Make good looking soldering for T12 tips, current and set temperature in \*C degree on LCD, autosleep, PID controller, touch button for stop/start soldering, GX16 connector for quick change handles, heating LED, and switch for 230AC (power save & safety). Maybe in future I'll make additionaly li-ion power. What is important I make frontpanel for any who can order PCB or drill on CNC, otherwise it can be very difficult to make it.
+Make good looking soldering for T12 tips with features: current and set temperature in \*C degree on LCD, autosleep, PID controller, touch button for stop/start soldering, GX16 connector for quick change handles, heating LED, and switch for 230AC (power save & safety). Maybe in future I'll make additionaly li-ion power. What is important I make frontpanel for any who can order PCB or drill on CNC, otherwise it can be very difficult to make it.
 
 [PL:] Również chcę dostosowac charakterustykę wzmacniacza LM386 do faktycznej temperatury termopary/grotu poprzez wyznaczenie i zastosowanie wielomianu
 
@@ -12,7 +21,7 @@ Make good looking soldering for T12 tips, current and set temperature in \*C deg
 
 I intend to make update once at week at least.
 
-The soldering need only to make PID 
+For main features the soldering need only to make calibration for PID and thermostat math. (I'll write more soon)
 
 ## License
 

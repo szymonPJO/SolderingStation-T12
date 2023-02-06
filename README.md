@@ -17,7 +17,7 @@ I want to make good looking and useful soldering for T12 tips.
     - math for fix non linear thermocouple characteristic mesurment
     - eeprom
     - autosleep
-2. Display
+2. Display (LCD 160x80 ST7735S)
     - current and set temperature in \*C degree (text)
     - same as above, but as bar indicators
     - settings
@@ -26,7 +26,7 @@ I want to make good looking and useful soldering for T12 tips.
     - touch button for stop/start heating
     - GX16 connector for quick change handles
     - heating LED
-    - switch for 230AC (power save & safety
+    - switch for 230AC (power save & safety)
     - front panel form PCB
 4. Additional ideas
     - 907 tips compatibility

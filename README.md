@@ -13,25 +13,25 @@ I want to make good looking and useful soldering for T12 tips.
 
 ### Features:
 1. Software
-  - PID controller
-  - math for fix non linear thermocouple characteristic mesurment
-  - eeprom
-  - autosleep
+    - PID controller
+    - math for fix non linear thermocouple characteristic mesurment
+    - eeprom
+    - autosleep
 2. Display
-  - current and set temperature in \*C degree (text)
-  - same as above, but as bar indicators
-  - settings
+    - current and set temperature in \*C degree (text)
+    - same as above, but as bar indicators
+    - settings
 3. UI
-  - rotary encoder
-  - touch button for stop/start heating
-  - GX16 connector for quick change handles
-  - heating LED
-  - switch for 230AC (power save & safety
-  - front panel form PCB
+    - rotary encoder
+    - touch button for stop/start heating
+    - GX16 connector for quick change handles
+    - heating LED
+    - switch for 230AC (power save & safety
+    - front panel form PCB
 4. Additional ideas
-  - 907 tips compatibility
-  - tips recognizing
-  - optional li-ion power
+    - 907 tips compatibility
+    - tips recognizing
+    - optional li-ion power
 
 
 ## License

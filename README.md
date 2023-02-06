@@ -1,27 +1,38 @@
-# Soldering station T12 by SO
+# Soldering station T12 by SO `Build in progress...`
+Descripton of my own idea for soldering station I'm working now. (After I'm done I open whole project)
 
 <img src="https://github.com/Szymono/Soldering-station-T12-by-SO/blob/main/res/P1130167ee.jpeg"/>
 
+**UPDATE:06.02.2023** I had problems with accure mesurment thermocouble with STM32's 16-bit ADC and MCP601. Now waiting for new Op-Amps, but in close future I want to try make this mesurment on external ADC (ADS1015 or ADS1115) without any Op-Amp.
+
 **UPDATE:05.01.2022** I try to make own IDE on vscode and make/cmake, but I stuck ,becouse I want to make this without MXCube. So I have to write own makefile and first lern how it works. I hope this half of the year I finish whole project ^^ 
 
-# Description
+# My motivation
 
-Soldering station for T12 handle/tips (also 907 in future). `Build in progress...`
+I want to make good looking and useful soldering for T12 tips.
 
-Click ⭐ if u like it
-<!-- want updetes more frequently -->
+### Features:
+1. Software
+  - PID controller
+  - math for fix non linear thermocouple characteristic mesurment
+  - eeprom
+  - autosleep
+2. Display
+  - current and set temperature in \*C degree (text)
+  - same as above, but as bar indicators
+  - settings
+3. UI
+  - rotary encoder
+  - touch button for stop/start heating
+  - GX16 connector for quick change handles
+  - heating LED
+  - switch for 230AC (power save & safety
+  - front panel form PCB
+4. Additional ideas
+  - 907 tips compatibility
+  - tips recognizing
+  - optional li-ion power
 
-## My motivation
-
-Make good looking soldering for T12 tips with features: current and set temperature in \*C degree on LCD, autosleep, PID controller, touch button for stop/start soldering, GX16 connector for quick change handles, heating LED, and switch for 230AC (power save & safety). Maybe in future I'll make additionaly li-ion power. What is important I make frontpanel for any who can order PCB or drill on CNC, otherwise it can be very difficult to make it.
-
-[PL:] Również chcę dostosowac charakterustykę wzmacniacza LM386 do faktycznej temperatury termopary/grotu poprzez wyznaczenie i zastosowanie wielomianu
-
-## Plan to describe the project
-
-I intend to make update once at week at least.
-
-For main features the soldering need only to make calibration for PID and thermostat math. (I'll write more soon)
 
 ## License
 

@@ -1,0 +1,2 @@
+Partially copied from: https://github.com/Szymono/KiCad_library
+

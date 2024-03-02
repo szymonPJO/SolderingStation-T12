@@ -71,11 +71,11 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
 ## Assembly Guide
 
-1. Firstly take a look at overall BOM below. Next check PCB BOM in `PCB/{version}/bom/` folder. This is [_Interactive BOM_](https://github.com/openscopeproject/InteractiveHtmlBom) in `*.htlm` file. You have to download this before (I suggest to dowload all repo firstly)
+1. Firstly take a look at overall BOM below. Next check [PCB BOM online][preview-bom-v1] or as file in `PCB/{version}/bom/ibom.html`. (I suggest to dowload all repo firstly)
 
     |||
     |-|-|
-    |PCB components| all important components from PCB BOM (PCB/../bom/ibom.html)|
+    |PCB components| all important components from PCB BOM
     |Power Supply 24V| 24V/3A or more current (e.g. 24V/4A) |
     |Power Supply 5V| 5V/100mA or more current |
     |MCU| Blue Pill board|
@@ -97,7 +97,7 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
     If u order PCB, remember u can also order PCB-front-board together
 
-3. Soldering SMD (**after drilling**) - _InteractiveBOM_ in `PCB/*/bom/` folder can help
+3. Soldering SMD (**after drilling**) - BOM [online][preview-bom-v1] or `PCB/*/bom/` can help
 4. Soldering THT
 5. Mount 24V power supply to device housing and **make separation** between PCB (Plan this housing from mountings things inside)
 
@@ -150,3 +150,5 @@ Feel free to open Pull Request or some Issue
 ---
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a>
+
+[preview-bom-v1]: https://html-preview.github.io/?url=https://github.com/szymonPJO/SolderingStation-T12/blob/main/PCB/soldering-mainboard-v1.0/bom/ibom.html

@@ -63,7 +63,7 @@ U need at least STLINK-V2 clone debuger.
 st-flash --reset write soldering-*.bin 0x08000000
 ```
 
-If u have error u probably have stm32 clone. Blue-Pill boards have clons of stm32 often. Check `st-info --chipid`. For clones "chipid" is 0 instead 0x0410 or similar. Try my edited config.
+If u have error u probably it's stm32 clone. Blue-Pill boards have clons of stm32 often. Check `st-info --chipid`. For clones "chipid" is 0 instead 0x0410 or similar sometimes. Try flash with my config file.
 
 ``` bash
 st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
@@ -71,22 +71,38 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
 ## Assembly Guide
 
-1. Firstly take a look at BOM and Schematics. Make sure u have all what you need to DIY. Good to check all parts berore u start assembly.
+1. Firstly take a look at overall BOM below. Next check PCB BOM in `PCB/{version}/bom/` folder. This is [_Interactive BOM_](https://github.com/openscopeproject/InteractiveHtmlBom) in `*.htlm` file. You have to download this before (I suggest to dowload all repo firstly)
+
+    |||
+    |-|-|
+    |PCB components| all important components from PCB BOM (PCB/../bom/ibom.html)|
+    |Power Supply 24V| 24V/3A or more current (e.g. 24V/4A) |
+    |Power Supply 5V| 5V/100mA or more current |
+    |MCU| Blue Pill board|
+    |Display| ST7735 SPI 160x80 0.96" module|
+    |Encoder| Rotary Encoder module|
+    |Soldering Iron Socket| GX12-5 Socket|
+    |Front Panel| PCB front panel (project in repo folder)|
+    |Knob| Knob for encoder|
+    |AC Switch| SPDT|
+    |Other components| led or duoled 3mm, 2x 1nF THT|
+
+    Make sure u have all what you need to DIY. Good to check all parts works berore u start assembly
 2. If u making PCB by own, remember to:
     - U can use _Ready-to-print.pdf_ for e.g. iron-on method
     - Protect copper by e.g. Rosin
     - Solder wires from "F.cu" layer (may be before drilling, except two connections)
-        <img src="Pictures/Wires-at-[F.Cu].png" alt="Tekst zastępczy" width="400" height="180" align="left">
+        <img src="Pictures/Wires-at-[F.Cu].png" alt="Tekst zastępczy" width="400" height="180" align="char">
 
 
     If u order PCB, remember u can also order PCB-front-board together
 
-3. Soldering SMD (**after drilling**) - `InteractiveBOM.html` can help
+3. Soldering SMD (**after drilling**) - _InteractiveBOM_ in `PCB/*/bom/` folder can help
 4. Soldering THT
-5. Mount 24V power supply to devices housing and **make separation** between PCB (Plan this housing from mountings things inside)
+5. Mount 24V power supply to device housing and **make separation** between PCB (Plan this housing from mountings things inside)
 
 6. Make power wires from overall schematic for: _Switch, Power suplies, AC connector_ (**Isolate 230V wires and connections**)
-7. Make wires and solder from overall schematic for: _Display, Encoder, etc_
+7. Make wires and solder from overall schematic (for: _Display, Encoder, etc_) and add 2x 1nF to Encoder module if there is no capacitors
 6. **Isolate** and Mount (glue) 5V power supply
 7. Connect all together, burn binary and **check that's working**
 8. Glue OLED on working display (it would be easier to nice match) if u have PCB-front-board.
@@ -103,9 +119,12 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
     - tweezer
     - (optional) crimping tool for Dupont Connectors
 
-
 - good to use:
     - 2.54mm angle pin header + Dupont female Connectors
+
+- Front Panel
+
+    U have to order PCB or drill by CNC. Alternativly try to print 'cut edges' on paper and cut housing plastic plate by knife / drill. The G762 housing have bit soft plastic (maybe ABS) front/back plates.
 
 ## Gallery
 
@@ -115,13 +134,18 @@ Check the `Pictures/` folder! :)
 
 ---
 
-### Imagined Concept:
+#### Imagined Concept:
 
 What I decide to leave at concept phase:
 
 - 907 tips compatibility
-- Tips Recognizing
+- tips recognizing
+- measurement of cold junction thermistor
 - optional li-ion power
+
+### Contributing
+
+Feel free to open Pull Request or some Issue
 
 ---
 

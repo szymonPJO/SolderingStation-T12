@@ -12,7 +12,7 @@
 - **Instability (Consistency) of Set Temperature**: ±0.2°C
 - **Temperature Range**: 0 – 500°C (from room temperature)
 - **Number of ADC Samples**: 250
-- **Measurement Time** / **Percentage of Measurement Duration (Excluding Heating)**: 1.4ms / 1.4% (or 0.9ms / 0.9% for temperatures >150°C)
+- **Measurement Time** / **Percentage of Measurement Duration (Heating Off)**: 1.4ms / 1.4% (or 0.9ms / 0.9% for temperatures >150°C)
 - **PWM Frequency** / **Measurement Frequency**: 50Hz / 10Hz
 - **Other**: (futures below)
 
@@ -57,13 +57,13 @@ elektroda.
 
 ## Flashing
 
-U need at least STLINK-V2 clone debuger.
+It's required debuger for flash STM32. STLINK-V2 clone is fine.
 
 ``` bash
 st-flash --reset write soldering-*.bin 0x08000000
 ```
 
-If u have error u probably it's stm32 clone. Blue-Pill boards have clons of stm32 often. Check `st-info --chipid`. For clones "chipid" is 0 instead 0x0410 or similar sometimes. Try flash with my config file.
+If you have error then it's probably stm32 clone. It's ok. Blue-Pill boards have clons often. Check `st-info --chipid`. For clones "chipid" is 0 instead 0x0410 or similar. Try to flash with my config file.
 
 ``` bash
 st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
@@ -71,7 +71,7 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
 ## Assembly Guide
 
-1. Firstly take a look at overall BOM below. Next check [PCB BOM online][preview-bom-v1] or as file in `PCB/{version}/bom/ibom.html`. (I suggest to dowload all repo firstly)
+1. First take a look at overall BOM below. Next check [PCB BOM online][preview-bom-v1] or as file in `PCB/{version}/bom/ibom.html`. (I suggest to dowload the repo this point)
 
     |||
     |-|-|
@@ -129,6 +129,7 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 ## Gallery
 
 ![PCB preview](Pictures/PCB-prewiew.png)
+![PCB after soldering](2024-02-25-21-33-33-155.jpg)
 
 Check the `Pictures/` folder! :)
 

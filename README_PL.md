@@ -6,6 +6,7 @@
 </table>
 
 ## Specyfikacja:
+
 - **Czas nagrzewania**: 5 sekund do osiągnięcia 200°C
 - **Dokładność pomiaru**: do ±5%
 - **Moc**: 75W
@@ -16,23 +17,22 @@
 - **Częstotliwość PWM** / **Częstotliwość pomiaru**: 50Hz / 10Hz
 - **Inne**: (cechy poniżej)
 
-
 <!-- # O mojej motywacji
 
-elektroda. 
+elektroda.
 *Tłumaczone strony z polskiego! -->
 
 ### Cechy:
 
 - Kompatybilność z grotami T12
 - Wyświetlacz IPS
-    - Bieżąca i ustawiona temperatura w `°C`
-    - Wskaźnik paska wyjścia mocy
-    - Ustawienia (PID i GUI)
+  - Bieżąca i ustawiona temperatura w `°C`
+  - Wskaźnik paska wyjścia mocy
+  - Ustawienia (PID i GUI)
 - Enkoder obrotowy
 - Przycisk dotykowy (zatrzymaj/uruchom grzanie)
 - Dioda LED grzania
-- Przełącznik 230VAC 
+- Przełącznik 230VAC
 - Panel przedni - wykonany z PCB
 - Złącze GX16 (łatwa wymiana kolby/grotów)
 
@@ -59,13 +59,13 @@ elektroda.
 
 Do wgrania binarki na STM32 wymagany jest debugger. Klon STLINK-V2 jest ok.
 
-``` bash
+```bash
 st-flash --reset write soldering-*.bin 0x08000000
 ```
 
 Jeśli pojawi się błąd, to prawdopodobnie masz klona STM32. Nic złego. Płytki Blue-Pill często mają klony. Sprawdź `st-info --chipid`. Dla klonów "chipid" wynosi 0 zamiast np. 0x0410. Spróbuj wgrać z moim plikiem konfiguracyjnym.
 
-``` bash
+```bash
 st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 ```
 
@@ -73,57 +73,61 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
 1. Na początek zapoznaj się z listą materiałów (BOM) znajdującą się poniżej. Następnie sprawdź [PCB BOM online][podglad-bom-v1] lub jako plik w `PCB/{wersja}/bom/ibom.html`. (Sugeruję pobranie repozytorium w tym punkcie)
 
-    |||
-    |-|-|
-    |Elementy PCB| wszystkie istotne komponenty z listy materiałów PCB
-    |Zasilacz 24V| 24V/3A lub większy prąd (np. 24V/4A) |
-    |Zasilacz 5V| 5V/100mA lub większy prąd |
-    |MCU| Płytka Blue Pill|
-    |Wyświetlacz| Moduł ST7735 SPI 160x80 0.96"|
-    |Enkoder| Moduł enkodera obrotowego|
-    |Gniazdo lutownicze| Gniazdo GX16-5|
-    |Panel przedni| Front Panel PCB (projekt w folderze repozytorium)|
-    |Pokrętło| Pokrętło do enkodera|
-    |Przełącznik AC| SPDT|
-    |Pozostałe elementy| LED lub dioda dwukolorowa 3mm, 2x 1nF THT|
+   | Część              | Opis                                                                      | Photo                                                                    |
+   | ------------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+   | Elementy PCB       | Wszystkie istotne komponenty z listy materiałów [PCB BOM][preview-bom-v1] |                                                                          |
+   | Obudowa            | Gainta G762                                                               |                                                                          |
+   | Zasilacz 24V       | 24V/3A lub większy prąd (np. 24V/4A)                                      | <img src="Pictures/parts-modules/power-supply-24v-1.jpg" height="80">    |
+   | Zasilacz 5V        | 5V/100mA lub większy prąd                                                 |                                                                          |
+   | MCU                | Płytka Blue Pill                                                          |                                                                          |
+   | Wyświetlacz        | Moduł ST7735 SPI 160x80 0.96"                                             | <img src="Pictures/parts-modules/display.jpg" alt="oled" height="80">    |
+   | Enkoder            | Moduł enkodera obrotowego                                                 | <img src="Pictures/parts-modules/enkoder.jpg" alt="enkoder" height="80"> |
+   | Gniazdo lutownicze | Gniazdo GX16-5                                                            |                                                                          |
+   | Panel przedni      | Front Panel PCB (projekt w folderze repozytorium)                         |                                                                          |
+   | Pokrętło           | Pokrętło do enkodera                                                      |                                                                          |
+   | Przełącznik AC     | SPDT                                                                      |                                                                          |
+   | Pozostałe elementy | LED lub dioda dwukolorowa 3mm, 2x 1nF THT                                 |                                                                          |
 
-    Upewnij się, że masz wszystko, czego potrzebujesz do samodzielnego wykonania. Dobrze jest sprawdzić, czy wszystkie części działają przed rozpoczęciem montażu.
+   Upewnij się, że masz wszystko, czego potrzebujesz do samodzielnego wykonania. Dobrze jest sprawdzić, czy wszystkie części działają przed rozpoczęciem montażu.
+
 2. Jeśli wykonujesz PCB samodzielnie, pamiętaj o:
-    <!-- - Możesz użyć _Ready-to-print.pdf_ np. do metody żelazkowej -->
-    - Zabezpiecz miedź np. kalafonią
-    - Przylutuj przewody z warstwy "F.cu" (może być przed wierceniem, z wyjątkiem dwóch połączeń)
-        <img src="Pictures/Wires-at-[F.Cu].png" alt="Tekst zastępczy" width="400" height="180" align="char">
+   <!-- - Możesz użyć _Ready-to-print.pdf_ np. do metody żelazkowej -->
 
+   - Zabezpiecz miedź np. kalafonią
+   - Przylutuj przewody z warstwy "F.cu" (może być przed wierceniem, z wyjątkiem dwóch połączeń)
+     <img src="Pictures/Wires-at-[F.Cu].png" alt="Tekst zastępczy" width="400" height="180" align="char">
 
-    Jeśli zamawiasz PCB, pamiętaj, że możesz zamówić panel przedni z PCB razem.
+   Jeśli zamawiasz PCB, pamiętaj, że możesz zamówić panel przedni z PCB razem.
 
 3. Lutowanie elementów SMD (**po wierceniu**) - Lista materiałów [online][podglad-bom-v1] lub `PCB/*/bom/` może pomóc
 4. Lutowanie THT
 5. Zamocuj zasilacz 24V do obudowy urządzenia i **wykonaj izolację** między PCB (Zplanuj tę obudowę od wewnątrz - wystające pypki)
 6. Wykonaj przewody zasilające z ogólnego schematu dla: _Przełącznik, Zasilacze, Gniazdo AC_ (**Zaizoluj przewody 230V i złącza**)
 7. Wykonaj i przylutuj przewody z ogólnego schematu (dla: _Wyświetlacz, Enkoder, itp._) i dodaj 2x 1nF do modułu enkodera, jeśli nie ma on kondensatorów
-6. **Zaizoluj** i Zamocuj (przyklej) zasilacz 5V
-7. Połącz wszystko ze sobą, wgraj binarkę i **sprawdź, czy działa**
-8. Przyklej OLED jak urządzenie działa (będzie łatwiej dopasować) do (jeśli masz) front panelu PCB.
-9. Teraz złóż wszystko do kupy
+8. **Zaizoluj** i Zamocuj (przyklej) zasilacz 5V
+9. Połącz wszystko ze sobą, wgraj binarkę i **sprawdź, czy działa**
+10. Przyklej OLED jak urządzenie działa (będzie łatwiej dopasować) do (jeśli masz) front panelu PCB.
+11. Teraz złóż wszystko do kupy
 
 ### Dodatkowe wskazówki dotyczące montażu
 
 - **Bądź ostrożny** z **Zasilaniem AC**
 
 - wymagane narzędzia:
-    - działająca lutownica (to zabawne, ale nie ironiczne)
-    - trochę kleju (np. gorącego kleju lub b7000)
-    - wiertarka, wiertła: ~3mm, 0,7mm, 0,9mm (zobacz w kicad brd)
-    - pęseta
-    - (opcjonalnie) narzędzie do zaciskania złączek Dupont
+
+  - działająca lutownica (to zabawne, ale nie ironiczne)
+  - trochę kleju (np. gorącego kleju lub b7000)
+  - wiertarka, wiertła: ~3mm, 0,7mm, 0,9mm (zobacz w kicad brd)
+  - pęseta
+  - (opcjonalnie) narzędzie do zaciskania złączek Dupont
 
 - dobrze mieć:
-    - złącza przewodów żeńskie Dupont + kątowe złącza kołkowe 2.54mm
+
+  - złącza przewodów żeńskie Dupont + kątowe złącza kołkowe 2.54mm
 
 - Panel przedni
 
-    Musisz zamówić PCB lub wyercić otwory na CNC. Alternatywnie spróbuj wydrukować 'cut edges' na papierze i wyciąć płytę z tworzywa sztucznego za pomocą noża / wiertarki. Obudowy G762 mają dość miękkie plastiki (prawdopodobnie ABS) - frontowe/tylne płytki.
+  Musisz zamówić PCB lub wyercić otwory na CNC. Alternatywnie spróbuj wydrukować 'cut edges' na papierze i wyciąć płytę z tworzywa sztucznego za pomocą noża / wiertarki. Obudowy G762 mają dość miękkie plastiki (prawdopodobnie ABS) - frontowe/tylne płytki.
 
 ## Galeria
 

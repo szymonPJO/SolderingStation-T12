@@ -6,6 +6,7 @@
 </table>
 
 ## Specification:
+
 - **Ramp-up Time**: 5 seconds to achieve 200°C
 - **Measurement Accuracy**: up to ±5%
 - **Power**: 75W
@@ -16,23 +17,22 @@
 - **PWM Frequency** / **Measurement Frequency**: 50Hz / 10Hz
 - **Other**: (futures below)
 
-
 <!-- # About my motivation
 
-elektroda. 
+elektroda.
 *Translated site from polish! -->
 
 ### Features:
 
 - T12 Tips Compatibile
 - IPS Display
-    - Current and Set Temperature in `°C`
-    - Power Output Bar Indicator
-    - Settings (PID and GUI)
+  - Current and Set Temperature in `°C`
+  - Power Output Bar Indicator
+  - Settings (PID and GUI)
 - Rotary Encoder
 - Touch Button (stop/start heating)
 - Heating LED
-- Switch 230VAC 
+- Switch 230VAC
 - Front Panel - PCB made
 - Connector GX16 (easy tips replacement)
 
@@ -59,13 +59,13 @@ elektroda.
 
 It's required debuger for flash STM32. STLINK-V2 clone is fine.
 
-``` bash
+```bash
 st-flash --reset write soldering-*.bin 0x08000000
 ```
 
 If you have error then it's probably stm32 clone. It's ok. Blue-Pill boards have clons often. Check `st-info --chipid`. For clones "chipid" is 0 instead 0x0410 or similar. Try to flash with my config file.
 
-``` bash
+```bash
 st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 ```
 
@@ -73,29 +73,31 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
 1. First take a look at overall BOM below. Next check [PCB BOM online][preview-bom-v1] or as file in `PCB/{version}/bom/ibom.html`. (I suggest to dowload the repo this point)
 
-    |||
-    |-|-|
-    |PCB components| all important components from PCB BOM
-    |Power Supply 24V| 24V/3A or more current (e.g. 24V/4A) |
-    |Power Supply 5V| 5V/100mA or more current |
-    |MCU| Blue Pill board|
-    |Display| ST7735 SPI 160x80 0.96" module|
-    |Encoder| Rotary Encoder module|
-    |Soldering Iron Socket| GX16-5 Socket|
-    |Front Panel| PCB front panel (project in repo folder)|
-    |Knob| Knob for encoder|
-    |AC Switch| SPDT|
-    |Other components| led or duoled 3mm, 2x 1nF THT|
+   | Part                  | Description                                             | Photo                                                                    |
+   | --------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------ |
+   | PCB components        | All important components from [PCB BOM][preview-bom-v1] |                                                                          |
+   | Housing               | Gainta G762                                             |                                                                          |
+   | Power Supply 24V      | 24V/3A or more current (e.g. 24V/4A)                    | <img src="Pictures/parts-modules/power-supply-24v-1.jpg" height="80">    |
+   | Power Supply 5V       | 5V/100mA or more current                                |                                                                          |
+   | MCU                   | Blue Pill board                                         |                                                                          |
+   | Display               | ST7735 SPI 160x80 0.96" module                          | <img src="Pictures/parts-modules/display.jpg" alt="oled" height="80">    |
+   | Encoder               | Rotary Encoder module                                   | <img src="Pictures/parts-modules/enkoder.jpg" alt="encoder" height="80"> |
+   | Soldering Iron Socket | GX16-5 Socket                                           |                                                                          |
+   | Front Panel           | PCB front panel (project in repo folder)                |                                                                          |
+   | Knob                  | Knob for encoder                                        |                                                                          |
+   | AC Switch             | SPDT                                                    |                                                                          |
+   | Other components      | LED or duoLED 3mm, 2x 1nF THT                           |                                                                          |
 
-    Make sure u have all what you need to DIY. Good to check all parts works berore u start assembly
+   Make sure u have all what you need to DIY. Good to check all parts works berore u start assembly
+
 2. If u making PCB by own, remember to:
-    <!-- - U can use _Ready-to-print.pdf_ for e.g. iron-on method -->
-    - Protect copper by e.g. Rosin
-    - Solder wires from "F.cu" layer (may be before drilling, except two connections)
-        <img src="Pictures/Wires-at-[F.Cu].png" alt="Tekst zastępczy" width="400" height="180" align="char">
+   <!-- - U can use _Ready-to-print.pdf_ for e.g. iron-on method -->
 
+   - Protect copper by e.g. Rosin
+   - Solder wires from "F.cu" layer (may be before drilling, except two connections)
+     <img src="Pictures/Wires-at-[F.Cu].png" alt="Tekst zastępczy" width="400" height="180" align="char">
 
-    If u order PCB, remember u can also order PCB-front-board together
+   If u order PCB, remember u can also order PCB-front-board together
 
 3. Soldering SMD (**after drilling**) - BOM [online][preview-bom-v1] or `PCB/*/bom/` can help
 4. Soldering THT
@@ -103,28 +105,30 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
 6. Make power wires from overall schematic for: _Switch, Power suplies, AC connector_ (**Isolate 230V wires and connections**)
 7. Make wires and solder from overall schematic (for: _Display, Encoder, etc_) and add 2x 1nF to Encoder module if there is no capacitors
-6. **Isolate** and Mount (glue) 5V power supply
-7. Connect all together, burn binary and **check that's working**
-8. Glue OLED while device works (it would be easier to nice match) to (if u have) PCB-front-board.
-9. Let's put everything together now
+8. **Isolate** and Mount (glue) 5V power supply
+9. Connect all together, burn binary and **check that's working**
+10. Glue OLED while device works (it would be easier to nice match) to (if u have) PCB-front-board.
+11. Let's put everything together now
 
 ### Additional assembly tips
 
 - **Be careful** with **AC Power**
 
 - required tools:
-    - some working soldering iron (it's funny, but not ironically)
-    - some glue (e.g. hotglue or b7000)
-    - drilling machine, drills: ~3mm, 0,7mm, 0,9mm (look at kicad brd)
-    - tweezer
-    - (optional) crimping tool for Dupont Connectors
+
+  - some working soldering iron (it's funny, but not ironically)
+  - some glue (e.g. hotglue or b7000)
+  - drilling machine, drills: ~3mm, 0,7mm, 0,9mm (look at kicad brd)
+  - tweezer
+  - (optional) crimping tool for Dupont Connectors
 
 - good to use:
-    - 2.54mm angle pin header + Dupont female Connectors
+
+  - 2.54mm angle pin header + Dupont female Connectors
 
 - Front Panel
 
-    U have to order PCB or drill by CNC. Alternativly try to print 'cut edges' on paper and cut housing plastic plate by knife / drill. The G762 housing have bit soft plastic (maybe ABS) - front/back plates.
+  U have to order PCB or drill by CNC. Alternativly try to print 'cut edges' on paper and cut housing plastic plate by knife / drill. The G762 housing have bit soft plastic (maybe ABS) - front/back plates.
 
 ## Gallery
 

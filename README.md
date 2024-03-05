@@ -81,7 +81,7 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
     |MCU| Blue Pill board|
     |Display| ST7735 SPI 160x80 0.96" module|
     |Encoder| Rotary Encoder module|
-    |Soldering Iron Socket| GX12-5 Socket|
+    |Soldering Iron Socket| GX16-5 Socket|
     |Front Panel| PCB front panel (project in repo folder)|
     |Knob| Knob for encoder|
     |AC Switch| SPDT|
@@ -89,7 +89,7 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
     Make sure u have all what you need to DIY. Good to check all parts works berore u start assembly
 2. If u making PCB by own, remember to:
-    - U can use _Ready-to-print.pdf_ for e.g. iron-on method
+    <!-- - U can use _Ready-to-print.pdf_ for e.g. iron-on method -->
     - Protect copper by e.g. Rosin
     - Solder wires from "F.cu" layer (may be before drilling, except two connections)
         <img src="Pictures/Wires-at-[F.Cu].png" alt="Tekst zastępczy" width="400" height="180" align="char">
@@ -105,7 +105,7 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 7. Make wires and solder from overall schematic (for: _Display, Encoder, etc_) and add 2x 1nF to Encoder module if there is no capacitors
 6. **Isolate** and Mount (glue) 5V power supply
 7. Connect all together, burn binary and **check that's working**
-8. Glue OLED on working display (it would be easier to nice match) if u have PCB-front-board.
+8. Glue OLED while device works (it would be easier to nice match) to (if u have) PCB-front-board.
 9. Let's put everything together now
 
 ### Additional assembly tips
@@ -124,7 +124,7 @@ st-flash -c doc/BP_clone.cfg --reset write soldering-*.bin 0x08000000
 
 - Front Panel
 
-    U have to order PCB or drill by CNC. Alternativly try to print 'cut edges' on paper and cut housing plastic plate by knife / drill. The G762 housing have bit soft plastic (maybe ABS) front/back plates.
+    U have to order PCB or drill by CNC. Alternativly try to print 'cut edges' on paper and cut housing plastic plate by knife / drill. The G762 housing have bit soft plastic (maybe ABS) - front/back plates.
 
 ## Gallery
 
@@ -141,7 +141,7 @@ What I decide to leave at concept phase:
 
 - 907 tips compatibility
 - tips recognizing
-- measurement of cold junction thermistor
+- measurement of thermocouple cold junction thermistor
 - optional li-ion power
 
 ### Contributing
